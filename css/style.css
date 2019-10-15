@@ -1,3 +1,8 @@
+h1,h2,h3,h4,h5,h6{
+	padding: 0;
+	margin: 0;
+	font-size: inherit;
+}
 /*Top Row*/
 .badge {
 	background-color: #3b3b3b;
@@ -5,15 +10,46 @@
 body {
 	background-color: black;
 	overflow-y: hidden;
-overflow-x: hidden;
+	overflow-x: hidden;
 }
 .spire ul li.spireCell.cellColorNotBeaten{
 	background-color: #928DAD;
 }
 
+.spire ul li.spireCell.cellColorNotBeaten.Corruption{
+	background-color: #2E0854;
+}
+
+.spire ul li.spireCell.cellColorNotBeaten.Healthy{
+	background-color: #3D2C15;
+}
+
+.spire ul li.spireCell.cellColorNotBeaten.Magma{
+	background-color: #8c0000;
+	color: #FFDDDD;
+}
+
+.smallEnemyName{
+	font-size: 0.8em;
+}
+
+.liquid ul li{
+	border: 0;
+	background: yellow;
+}
+
+.liquid{
+	border: 3px solid black;
+}
+
+.LiquimpMessage{
+	background-color: #5A5ADF !important;
+	color: white !important;
+}
+
 .progress-bar {
     -webkit-transition: width .1s ease;
-    transition: width .1s ease;
+	transition: width .1s ease;
 }
 
 #wrapper {
@@ -45,7 +81,7 @@ overflow-x: hidden;
 
 .talentItem{
 	display: inline-block;
-	width: 20%;
+	width: 16.666666%;
 	text-align: center;
 	border: 1px solid white;
 	padding: 2% 0%;
@@ -54,7 +90,12 @@ overflow-x: hidden;
 
 #talentsTitle{
 	text-align: center;
-	font-size: 2vw;
+	font-size: 1.9vw;
+}
+
+#talentsAffordable{
+	font-size: 1.5vw;
+	padding-top: 0.2vw;
 }
 
 #talentsCost{
@@ -86,7 +127,7 @@ overflow-x: hidden;
 }
 
 .talentName{
-	font-size: 0.7vw;
+	font-size: 0.58vw;
 }
 
 .talentPurchased{
@@ -103,6 +144,11 @@ overflow-x: hidden;
 	border: 1px solid white;
 }
 
+.talentLocked{
+	cursor: default;
+	font-size: 1.75vw;
+}
+
 .talentRowLocked .talentNotPurchased{
 	background-color: grey;
 	color: white;
@@ -111,6 +157,22 @@ overflow-x: hidden;
 .talentRowUnlocked .talentNotPurchased.talentReqNeeded{
 	background-color: #d9534f;
 	color: white;
+}
+
+.talentNotPurchased.talentCanBuyRow, .talentReqNeeded.talentCanBuyRow{
+	background-color: #88860a !important;
+}
+
+.talentPurchased.talentCanBuyRow{
+	background-color: #424104 !important;
+}
+
+.talentNotPurchased.talentIdealRow, .talentReqNeeded.talentIdealRow{
+	background-color: #04195c !important
+}
+
+.talentPurchased.talentIdealRow{
+	background-color: #020a2c !important;
 }
 
 .playerGather {
@@ -129,7 +191,7 @@ overflow-x: hidden;
 	margin: 0 0.15%;
 }
 
-#GATargetError{
+#GATargetError, #mapAtZoneErrorText{
 	text-align: center;
 	color: red;
 	font-size: 1.2em;
@@ -154,8 +216,18 @@ overflow-x: hidden;
 	background-color: rgba(255, 255, 255, 0.5);
 }
 
+.titleSpan {
+	font-size: 0.9vw;
+	display: block;
+}
+
+.titleDiv .row{
+	padding: 0.2vw 0;
+}
+
 #jobsTitleUnemployed{
-	font-size: .8em;
+	font-size: .9vw;
+	display: block;
 }
 
 .dmgColorWhite{
@@ -187,7 +259,7 @@ overflow-x: hidden;
  }
  
 .resourceRow{
-	height: 49.9%;
+	height: 50%;
 	padding-right: .25vw;
 }
 
@@ -277,34 +349,34 @@ overflow-x: hidden;
     background: rgba(0, 0, 0, 1);
     font-size: 1.12em;
     text-align: center;
-    padding: 3px;
+    padding: 0.2vw;
 }
 
-#autoStructureBtn{
+.toggleConfigBtn{
 	overflow: hidden;
-	height: 1.51em;
+	height: 1.35vw;
 }
 
-#autoStructureBtn div{
+.toggleConfigBtn div{
 	display: inline-block;
 	text-align: center; 
 }
 
-#autoStructureBtn div:first-child{
+.toggleConfigBtn div:first-child{
 	width: 80%; 
 }
 
-#autoStructureBtn div:nth-child(2){
+.toggleConfigBtn div:nth-child(2){
 	width: 20%; 
 	background-color: grey;
 	float: right;
 }
 
-#autoStructureBtn div:nth-child(2):hover{
+.toggleConfigBtn div:nth-child(2):hover{
 	background-color: #666666;
 }
 
-#autoStructureBtn div span{
+.toggleConfigBtn div span{
 	line-height: 1.2em;
 	font-size: 1.1em;
 }
@@ -322,37 +394,54 @@ overflow-x: hidden;
 	display: inline-block;
 }
 
-#autoStructureConfigTable tbody tr td{
+#autoPurchaseConfigTable tbody tr td{
 	padding: 5px;
 }
 
-#autoStructureConfigTable tbody tr td:nth-child(2) div:first-child{
+#autoPurchaseConfigTable tbody tr td:nth-child(2) div:first-child{
 	border-left: 1px solid black;
 }
 
-.structConfigCheckbox{
+.structConfigCheckbox, .jobConfigCheckbox, .equipConfigCheckbox{
 	transform: scale(2.5);
+}
+
+.autoCheckbox{
+	cursor: pointer;
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+	user-select: none;
+	font-size: 1.3vw;
+	margin-top: 0.1vw;
 }
 
 .Mutimp{
 	color: #00d936;
 }
 
-#autoStructureConfigTable{
+#autoPurchaseConfigTable{
 	width: 100%;
 	font-size: 1.2vw;
 }
 
-#autoStructureConfigTable tbody tr td div div select{
+#autoPurchaseConfigTable tbody tr td div div select{
 	padding: 1%;
 }
 
-.structConfigQuantity{
+.structConfigQuantity, .jobConfigQuantity, .equipConfigQuantity{
 	display: inline-block;
 	width: 50%;
 	padding: 1%;
 	line-height: normal;
 	border-width: 1px;
+	margin-right: 10%;
+}
+
+.equipConfigQuantity{
+	width: 40%;
 }
 
 .incrementBtn {
@@ -535,6 +624,7 @@ overflow-x: hidden;
 	color: #DDDDFF;
 }
 
+
 #foremenCount,
 #buildSpeed {
     font-size: 1.12em;
@@ -606,10 +696,11 @@ overflow-x: hidden;
 }
 
 #fireBtn {
-    border: 1px solid white;
+	border: 1px solid white;
+	font-size: 0.9vw;
 }
 
-#viewChallengeText {
+#viewChallengeText, #extraChallengeStuff {
 	font-size: 1.3vw;
 	color: white;
 }
@@ -617,6 +708,11 @@ overflow-x: hidden;
 #viewChallengeText ul{
 	overflow-y: auto;
 	max-height: 22vw;
+}
+
+#viewChallenge{
+	max-height: 60vh;
+	overflow-y: auto;
 }
 
 .nextChallenge {
@@ -686,8 +782,6 @@ overflow-x: hidden;
 	background-color: #d0d0d0;;
 }
 
-.titleSpan {}
-
 #buyContainer {
 	overflow-y: auto;
 	height: calc(99vh - 20vw - 195px);
@@ -730,6 +824,7 @@ overflow-x: hidden;
 
 #generatorWindow{
 	width: 98.3%;
+	margin-bottom: 2px;
 }
 
 .generatorStateActive{
@@ -790,12 +885,17 @@ overflow-x: hidden;
 	margin-bottom: 0;
 }
 
+.noTopMarg{
+	margin-top: 0;
+}
+
 
 #disableOnUnlockCheck{
 	height: 1vw;
 	width: 1vw;
 	line-height: 1vw;
 	margin: 0;
+	transform: scale(1.25);
 }
 
 #GADisableCheck{
@@ -823,12 +923,24 @@ overflow-x: hidden;
 	background: rgba(0,0,0,0);
 }
 
+#Geneticistassist.stateHappy.thingColorCtrl{
+	background: radial-gradient(#444 45%, rgba(0,0,0,0) 60%);
+}
+
 #Geneticistassist.stateHiring{
 	background: rgba(0,166,41,0.4);
 }
 
+#Geneticistassist.stateHiring.thingColorCtrl{
+	background: radial-gradient(black 45%, rgba(0,166,41,0.4) 60%);
+}
+
 #Geneticistassist.stateFiring{
 	background: rgba(140,35,0,0.4);
+}
+
+#Geneticistassist.stateFiring.thingColorCtrl{
+	background: radial-gradient(#444 45%, rgba(140,35,0,0.4) 60%);
 }
 
 #battleContainer {
@@ -879,6 +991,7 @@ overflow-x: hidden;
     width: 100%;
     left: 0;
 	color: white;
+	z-index: 7;
 }
 
 #settingsTable > tbody > tr > td {
@@ -948,11 +1061,23 @@ overflow-x: hidden;
 }
 
 .settingBtn4{
-	background-color: #7a00f2;
+	background-color: #47008c;
 }
 
 .settingBtn4:hover{
-	background-color: #47008c;
+	background-color: #1f003d;
+}
+
+.settingBtn5{
+	background-color: #53025a;
+}
+
+.settingBtn5:hover{
+	background-color: #1f0022;
+}
+
+.settingBtn0, .settingBtn1, .settingBtn3, .settingBtn4 {
+    color: white;
 }
 
 .optionContainer {
@@ -962,6 +1087,11 @@ overflow-x: hidden;
 	margin-right: 2vw;
 	margin-bottom: 1vw;
 	width: 15.5vw;
+}
+
+.maxCenter .optionContainer{
+	margin: 0 2.5%;
+	width: 45%;
 }
 
 #talentsEssenceTotal{
@@ -1018,17 +1148,14 @@ overflow-x: hidden;
 	margin-right: 0;
 }
 
-#numTabs{
-	margin-top: 5px;
-}
-
 #numTabs > ul > li > a {
-    padding: 3px;
+	padding: 3px;
+	border-radius: 0;
 }
 
-#buyTabsUl > li > a {
+.buyTabsUl > li > a {
 	border: 1px solid #ddd;
-	border-radius: 8px 8px 0 0;
+	border-radius: 8px 8px 0 0 !important;
 }
 
 .buyTab{
@@ -1040,6 +1167,20 @@ overflow-x: hidden;
     overflow-y: auto;
 	width: 100%;
 }
+
+#mapsHere.mapSize0{
+	height: calc(100vh - 31.5vw + 3.25vw - 90px);
+}
+
+#mapsHere.mapSize2{
+	height: calc(100vh - 31.5vw - 2.5vw - 90px);
+}
+
+#equipmentTitleDiv .lowPad, #buildingsTitleDiv .lowPad:nth-child(2) {
+    cursor: default;
+}
+
+
 
 #settingsTable {
     width: 100%;
@@ -1081,6 +1222,7 @@ overflow-x: hidden;
     display: block;
     margin-top: 5px;
 	font-size: .9vw;
+	margin-bottom: 0;
 }
 
 #buildings {
@@ -1096,6 +1238,7 @@ overflow-x: hidden;
     text-align: left;
 	list-style: none;
 	padding-left: 0;
+	cursor: default;
 }
 
 .battleRow{
@@ -1110,8 +1253,6 @@ overflow-x: hidden;
 	text-align: center;
 }
 
-.collecting {}
-
 #log {
     height: calc(100% - 2.1vw);
     width: 100%;
@@ -1121,11 +1262,7 @@ overflow-x: hidden;
     padding-right: 5px;
 }
 
-#settings {
-
-}
-
-#tooltipDiv {
+#tooltipDiv, #tooltipDiv2 {
     width: 32.5vw;
     position: absolute;
     background: lightgrey;
@@ -1134,6 +1271,10 @@ overflow-x: hidden;
     border: 2px solid blue;
     font-size: 0.9vw;
 	z-index: 7;
+}
+
+#tooltipDiv2{
+	z-index: 6;
 }
 
 #tooltipDiv.tooltipExtraHeirloom{
@@ -1181,7 +1322,7 @@ overflow-x: hidden;
 	text-align: center;
 }
 
-#tipTitle {
+#tipTitle, #tipTitle2 {
     font-size: 1.2em;
     text-align: center;
 }
@@ -1193,7 +1334,12 @@ overflow-x: hidden;
 	display: block;
 }
 
-.shrinkBtnText{
+#mapsBtnText{
+	margin-top: 0.08em;
+}
+
+.shrinkBtnText div:first-child{
+	margin-top: 0.3em !important;
 	font-size: 0.9vw !important;
 }
 
@@ -1202,8 +1348,6 @@ overflow-x: hidden;
 		font-size: .95vw !important;
 	}
 }
-
-
 
 #lootBdTabs{
 	background-color: black;
@@ -1218,9 +1362,10 @@ overflow-x: hidden;
 }
 
 .battleStatsTitle {
-	overflow: auto;
+	overflow: hidden;
     font-size: 1.1em;
 	max-height: 1.55em;
+	display: inline-block;
 }
 
 .badBadge {
@@ -1239,6 +1384,11 @@ overflow-x: hidden;
 
 .antiBadge{
 	font-size: .8em;
+}
+
+.sugarRushBadge{
+	background-color: #d96c00;
+	color: black;
 }
 
 #determinedBuff{
@@ -1323,8 +1473,16 @@ overflow-x: hidden;
     user-select: none;
 }
 
+.trimpsInfoPopup a{
+	font-weight: bold;
+}
+
 .logFlt {
     border-radius: 0;
+}
+
+.battleStatsTitle {
+    cursor: default;
 }
 
 #preMapsTitle {
@@ -1356,19 +1514,62 @@ overflow-x: hidden;
 	text-align: center;
 	font-size: 1vw;
 	background-color: rgba(0, 0, 0, 0.5);
-	padding-top: 1vw;
+	padding-top: 1.1vw;
 	margin-right: 1px;
 }
-#advMapsRow{
+
+
+.advSelect {
+	color: black;
+}
+
+#advPerfectCheckbox{
+	transform: scale(1.5);
+}
+
+#advMapsControlBtns{
+	position: absolute;
+	left: 0.1vw;
+	top: 0;
+	cursor: default;
+}
+
+#advMapsControlBtns span {
+	width: 25%;
+}
+
+#advMapsRow, #advMapsRow2{
 	text-align: center;
 	font-size: .9vw;
 	background-color: rgba(0,0,0,0.5);
 	padding-bottom: 1vw;
 	margin-right: 1px;
 }
+
 #advMapsTitle{
 	font-size: 1.2vw;
 }
+
+.advMapsTitle{
+	display: inline-block;
+}
+
+.mapPreset{
+	position: relative;
+	top: -0.1em;
+}
+
+.presetSelectionOn{
+	color: #109409;
+	text-shadow:
+	-1px -1px 0 black,  
+		1px -1px 0 black,
+	-1px 1px 0 black,
+		1px 1px 0 black;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
 #selectedMapName {
     text-decoration: underline;
 	padding-top: 10px;
@@ -1386,24 +1587,21 @@ overflow-x: hidden;
 .red {
     color: red;
 }
+.natureUpgradeCost .green{
+	color: white;
+	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.natureUpgradeCost .red, .natureUpgradeLevel .red{
+	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.natureUpgradeCost .orange{
+	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
 
 .orange{
 	color: #ff6519;
-}
-
-.battleCell.TrimpmasSnow, .badge.TrimpmasSnow, .badge.CorruptSnow, .badge.HotSnow, .badNameMutation.TrimpmasSnow, .badNameMutation.CorruptSnow, .badNameMutation.HotSnow{
-    color: #0082bc;
-    background: linear-gradient(45deg, rgba(255,255,255,0.8), rgba(189,255,255,0.8));
-}
-
-.battleCell.CorruptSnow{
-    color: #6082bc;
-    background: linear-gradient(45deg, rgba(255,255,255,0.8), rgba(221,175,255,0.8));
-}
-
-.battleCell.HotSnow{
-    color: #b0828c;
-    background: linear-gradient(45deg, rgba(255,255,255,0.8), rgba(253,175,175,0.8));
 }
 
 #portalWrapper{
@@ -1452,6 +1650,7 @@ overflow-x: hidden;
  .portalMk5 #portalError,
  .portalMk5 #portalHelium,
  .portalMk5 #portalTotalHelium,
+ .portalMk5 #portalTotalSpent,
  .portalMk5 #portalTotalPortals,
  .portalMk5 .challengeTitle{
   color: white !important;
@@ -1464,6 +1663,7 @@ overflow-x: hidden;
  .portalMk6 #portalError,
  .portalMk6 #portalHelium,
  .portalMk6 #portalTotalHelium,
+ .portalMk6 #portalTotalSpent,
  .portalMk6 #portalTotalPortals,
  .portalMk6 .challengeTitle{
   color: white !important;
@@ -1494,14 +1694,13 @@ overflow-x: hidden;
 #titleCol2{
 	position: absolute;
 	left: 47%;
-	
 }
 
 .perkColorOn{
 	background-color: #000;
 }
 
-.perkColorOff{
+.perkColorOff, .colorBuyOff{
 	background-color: #808080;
 }
 
@@ -1509,14 +1708,59 @@ overflow-x: hidden;
 	background-color: #696980;
 }
 
+.portalThing.detailed{
+	font-size: 0.96vw;
+	line-height: 1.1vw;
+}
+
 .portalThing{
 	width: 19.3%;
 	font-size: 1.1vw;
 }
 
-.portalThing.detailed{
+.portalThing.tinyPerk{
+	width: 13.78%;
 	font-size: 0.96vw;
-	line-height: 1.1vw;
+	height: 3.3em;
+}
+
+.portalThing.tinyPerk.detailed{
+	height: 5.2em;
+}
+
+.portalThing.smallPerk{
+	width: 16.16%;
+	letter-spacing: -0.01em;
+	height: 3.3em;
+	padding-top: calc(0.2vh + 0.02em);
+}
+
+.portalThing.smallPerk.detailed{
+	height: 5.2em;
+}
+
+.portalThing.smallPerk.changingOn{
+	line-height: 0.85em;
+	padding-top: calc(0.2vh + 0.05em);
+}
+
+.portalThing.tinyPerk.changingOn{
+	line-height: 0.78em;
+	padding-top: calc(0.2vh + 0.16em);
+}
+
+.portalThing.smallPerk.detailed.changingOn, .portalThing.tinyPerk.detailed.changingOn{
+	line-height: 0.88em;
+	padding-top: calc(0.2vh + 0.06em);
+	padding-bottom: calc(0.2vh + 0.09em);
+}
+
+.portalThing.tinyPerk .thingName{
+	letter-spacing: -0.01em;
+}
+
+.portalThing.detailed.tinyPerk{
+	font-size: 0.96vw;
 }
 
 .portalThing .thingName{
@@ -1542,8 +1786,8 @@ overflow-x: hidden;
 	height: 100vh;
 	padding: 20px;
 	text-align: center;
-	padding-left: 10vw;
-	padding-right: 10vw;
+	padding-left: 5vw;
+	padding-right: 5vw;
 	font-size: 1.5vw;
 	color: white;
 }
@@ -1553,16 +1797,24 @@ overflow-x: hidden;
 	font-size: 1.2vw;
 	padding: 0.25vw;
 	padding-top: 0.6vw;
-	height: 5.7vw;
+	height: 7vw;
 }
 
 #addCarriedBtn, #recycleAllHeirloomsBtn{
 	display: inline-block;
 	width: initial;
 	font-size: 0.9vw;
-	float: right;
 	padding: 0.1vw 0.2vw;
 	margin: 0;
+}
+
+.heirloomEquippedContainer.col-xs-4 {
+	font-size: 1.7vw;
+}
+
+.heirloomEquippedContainer.col-xs-4 div{
+	margin-top: 0.5vw;
+	margin-bottom: 0.25vw !important;
 }
 
 .heirloomBtnGroup{
@@ -1587,11 +1839,23 @@ overflow-x: hidden;
 	opacity: 0.5;
 }
 
-#modReplaceBtn, #modUpgradeBtn{
+#modReplaceBtn{
 	padding: 0.25vw;
 	width: 90%;
 	margin-left: 5%;
+	margin-top: 2%;
 	display: block;
+}
+
+.modUpgradeBtn{
+	width: 45%;
+	display: inline-block;
+	font-size: 0.8em;
+	padding: 0.25vw;
+}
+
+#modCantReplace{
+	margin-top: 1vw;
 }
 
 .portalError{
@@ -1631,7 +1895,8 @@ overflow-x: hidden;
 
 #modReplaceSelect{
 	background-color: black;
-	pointer: cursor;
+	cursor: pointer;
+	margin-top: 2%;
 	border: 0.2vw solid purple;
 	margin-left: -0.2vw;
 	margin-bottom: 0.25vw;
@@ -1648,6 +1913,23 @@ overflow-x: hidden;
 	text-align: center;
 	width: 2vw;
 	display: inline-block;
+}
+
+.heirloomChangeIcon{
+	display: inline-block;
+	font-size: 2.5vw;
+	width: 20%;
+	padding: 2%;
+	text-align: center;
+	cursor: pointer;
+}
+
+#selectedHeirloomIcon{
+	cursor: pointer;
+}
+
+.heirloomChangeIcon:hover{
+	background-color: rgb(27, 25, 25);
 }
 
 .heirloomRare0{
@@ -1787,6 +2069,204 @@ background: linear-gradient(135deg,  #000000 0%, #400000 50%, #100000 100%);
 	background-color: initial;
 }
 
+.heirloomRare8{
+	color: #0e5a07;
+	text-shadow: 
+			1px 1px 2px rgba(15, 158, 74, 0.6), 
+			0 0 25px rgba(43, 64, 185, 0.6), 
+			0 0 5px rgba(33, 114, 51, 0.6);
+}
+
+.specDesc8{
+	color: #0f9e4a;
+}
+
+.heirloomRare8.heirloomThing, .heirloomRare8 div .selectedHeirloomIcon{
+	color: #083604;
+	animation: heirRare8NoSpin 30s infinite;
+}
+
+.heirloomRare8.animated.heirloomThing, .heirloomRare8.animated div .selectedHeirloomIcon{
+	animation: heirRare8Animated 30s infinite;
+}
+
+@keyframes heirRare8Animated{
+	0% {
+		text-shadow: 
+			1px 1px 2px #0f9e4a, 
+			0 0 25px #2a40bb, 
+			0 0 5px #217233, 
+			-0.17vw -0.17vw 0.17vw rgba(70, 3, 82, 0.8),  
+			  0.17vw -0.17vw 0.17vw rgba(37, 80, 12, 0.72),
+			 -0.17vw 0.17vw 0.17vw rgba(124, 126, 9, 0.58),
+			  0.17vw 0.17vw 0.3vw rgba(33, 9, 36, 0.72);	
+			  animation-timing-function: ease-out;
+		transform: rotate(0deg);
+	}
+	50% {
+		text-shadow: 
+			1px 1px 8px #0f9e4a, 
+			0 0 50px #2a40bb, 
+			0 0 25px #217233, 
+			-0.17vw -0.17vw 0.17vw rgba(70, 3, 82, 0.8),  
+			  0.17vw -0.17vw 0.17vw rgba(37, 80, 12, 0.72),
+			 -0.17vw 0.17vw 0.17vw rgba(124, 126, 9, 0.58),
+			  0.17vw 0.17vw 0.3vw rgba(33, 9, 36, 0.72);	
+			  animation-timing-function: ease-in;
+		transform: rotate(180deg);
+	}
+	100% {
+	text-shadow: 
+			1px 1px 2px #0f9e4a, 
+			0 0 25px #2a40bb, 
+			0 0 5px #217233, 
+			-0.17vw -0.17vw 0.17vw rgba(70, 3, 82, 0.8),  
+			  0.17vw -0.17vw 0.17vw rgba(37, 80, 12, 0.72),
+			 -0.17vw 0.17vw 0.17vw rgba(124, 126, 9, 0.58),
+			  0.17vw 0.17vw 0.3vw rgba(33, 9, 36, 0.72);
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes heirRare8NoSpin{
+	0% {
+		text-shadow: 
+			1px 1px 2px #0f9e4a, 
+			0 0 25px #2a40bb, 
+			0 0 5px #217233, 
+			-0.17vw -0.17vw 0.17vw rgba(70, 3, 82, 0.8),  
+			  0.17vw -0.17vw 0.17vw rgba(37, 80, 12, 0.72),
+			 -0.17vw 0.17vw 0.17vw rgba(124, 126, 9, 0.58),
+			  0.17vw 0.17vw 0.3vw rgba(33, 9, 36, 0.72);	
+			  animation-timing-function: ease-out;
+	}
+	50% {
+		text-shadow: 
+			1px 1px 8px #0f9e4a, 
+			0 0 50px #2a40bb, 
+			0 0 25px #217233, 
+			-0.17vw -0.17vw 0.17vw rgba(70, 3, 82, 0.8),  
+			  0.17vw -0.17vw 0.17vw rgba(37, 80, 12, 0.72),
+			 -0.17vw 0.17vw 0.17vw rgba(124, 126, 9, 0.58),
+			  0.17vw 0.17vw 0.3vw rgba(33, 9, 36, 0.72);	
+			  animation-timing-function: ease-in;
+	}
+	100% {
+	text-shadow: 
+			1px 1px 2px #0f9e4a, 
+			0 0 25px #2a40bb, 
+			0 0 5px #217233, 
+			-0.17vw -0.17vw 0.17vw rgba(70, 3, 82, 0.8),  
+			  0.17vw -0.17vw 0.17vw rgba(37, 80, 12, 0.72),
+			 -0.17vw 0.17vw 0.17vw rgba(124, 126, 9, 0.58),
+			  0.17vw 0.17vw 0.3vw rgba(33, 9, 36, 0.72);
+	}
+}
+
+.heirloomRare8 .heirloomMod:hover, .heirloomRare8.rarityBdBox{
+	border: 0.2vw solid #0e5a07;
+}
+
+.heirloomRare8 .heirloomMod{
+	background-color: initial;
+}
+
+.heirloomRare9{
+	color: #5f39e6;
+	text-shadow: 
+			1px 1px 2px rgba(11, 2, 138, 0.6), 
+			0 0 25px rgba(3, 110, 17, 0.6), 
+			0 0 5px rgba(38, 28, 128, 0.6);
+}
+
+.rarityBdBox.heirloomRare9{
+	color: #15025a;
+	font-weight: bold;
+	text-shadow: 
+			1px 1px 8px #fff, 
+			0 0 50px #0bff02, 
+			0 0 25px #053d03, 
+			-0.17vw -0.17vw 0.17vw rgba(17, 71, 1, 0.8),  
+			  0.17vw -0.17vw 0.17vw rgba(13, 0, 89, 0.72),
+			 -0.17vw 0.17vw 0.17vw rgba(5, 44, 1, 0.58),
+			  0.17vw 0.17vw 0.3vw rgba(24, 0, 89, 0.72);
+}
+
+.heirloomRare9.heirloomThing, .heirloomRare9 div .selectedHeirloomIcon{
+	color: #15025a;
+	animation: heirRare9Animated 7s infinite;
+}
+
+.specDesc9{
+	color: #5f39e6;
+}
+
+.heirloomRare9 .heirloomMod:hover, .heirloomRare9.rarityBdBox{
+	border: 0.2vw solid #15025a;
+}
+
+.heirloomRare9 .heirloomMod{
+	background-color: initial;
+}
+
+@keyframes heirRare9Animated{
+	0% {
+		text-shadow: 
+			1px 1px 2px #837601, 
+			0 0 25px #3614b4, 
+			0 0 5px #4d4607, 
+			-0.17vw -0.17vw 0.17vw rgba(17, 71, 1, 0.8),  
+			  0.17vw -0.17vw 0.17vw rgba(13, 0, 89, 0.72),
+			 -0.17vw 0.17vw 0.17vw rgba(5, 44, 1, 0.58),
+			  0.17vw 0.17vw 0.3vw rgba(24, 0, 89, 0.72);	
+			  animation-timing-function: ease-in;
+	}
+	50% {
+		text-shadow: 
+			1px 1px 8px #033f01, 
+			0 0 50px #0bff02, 
+			0 0 25px #053d03, 
+			-0.17vw -0.17vw 0.17vw rgba(17, 71, 1, 0.8),  
+			  0.17vw -0.17vw 0.17vw rgba(13, 0, 89, 0.72),
+			 -0.17vw 0.17vw 0.17vw rgba(5, 44, 1, 0.58),
+			  0.17vw 0.17vw 0.3vw rgba(24, 0, 89, 0.72);	
+			  animation-timing-function: ease-out;
+	}
+	100% {
+	text-shadow: 
+			1px 1px 2px #837601, 
+			0 0 25px #3614b4, 
+			0 0 5px #4d4607, 
+			-0.17vw -0.17vw 0.17vw rgba(17, 71, 1, 0.8),  
+			  0.17vw -0.17vw 0.17vw rgba(13, 0, 89, 0.72),
+			 -0.17vw 0.17vw 0.17vw rgba(5, 44, 1, 0.58),
+			  0.17vw 0.17vw 0.3vw rgba(24, 0, 89, 0.72);	
+	}
+}
+
+
+
+
+.upgradeCostTextMax{
+	font-size: 0.7em;
+	margin-top: -2.5%;
+	display: block;
+}
+
+.upgradeCostTextMax span:first-child{
+	font-size: 1.1em;
+	display: block;
+}
+
+.upgradeCostTextMax span:nth-child(2){
+	display: block;
+}
+
+#specialModDescription{
+	font-size: 0.9vw;
+	margin-bottom: 0.65vw;
+}
+
 #heirRare{
 	background-color: #111;
 	font-size: 1.1vw;
@@ -1830,7 +2310,7 @@ background: linear-gradient(135deg,  #000000 0%, #400000 50%, #100000 100%);
 	line-height: 2vw;
 }
 
-#ShieldEquipped, #StaffEquipped{
+#ShieldEquipped, #StaffEquipped, #CoreEquipped{
 	background-color: #333;
 	display: inline-block;
 	padding: 1vw;
@@ -1844,7 +2324,7 @@ background: linear-gradient(135deg,  #000000 0%, #400000 50%, #100000 100%);
     box-shadow:inset 0px 0px 0px 0.2vw #646473;
 }
 
-#ShieldEquippedName, #StaffEquippedName{
+#ShieldEquippedName, #StaffEquippedName, #CoreEquippedName{
 	font-size: 1.4vw;
 	line-height: 1.4vw;
 }
@@ -1890,6 +2370,11 @@ background: linear-gradient(135deg,  #000000 0%, #400000 50%, #100000 100%);
 	display: inline-block;
 }
 
+#extraHeirloomsHere{
+	padding: 0.5vw;
+	
+}
+
 .heirloomModBtn{
 	border: 1px solid white;
 	cursor: pointer;
@@ -1917,6 +2402,15 @@ background: linear-gradient(135deg,  #000000 0%, #400000 50%, #100000 100%);
 	width: 5% !important;
 }
 
+.fluffyCalcRow{
+	background-color: #2b112b !important;
+	color: #b72cb7 !important;
+}
+
+.fluffyCalcRow td{
+	border: 1px solid white !important;
+}
+
 .corruptedCalcRow{
 	background-color: #2E0854 !important;
 	color: #DDDDFF !important;
@@ -1925,6 +2419,39 @@ background: linear-gradient(135deg,  #000000 0%, #400000 50%, #100000 100%);
 .corruptedCalcRow td{
 	border: 1px solid white !important;
 }
+
+.healthyCalcRow td{
+	border: 1px solid white !important;
+}
+
+.healthyCalcRow{
+	background-color: #3D2C15 !important;
+	color: #FFFFFF !important;
+}
+
+.mutationSumRow td{
+	border: 0 !important;
+}
+
+.mutationSumRow{
+	border: 2px solid black;
+}
+
+.mutationSumRow.corruptedCalcRow{
+	border-bottom: 0;
+}
+
+.mutationSumRow.healthyCalcRow{
+	border-top: 0;
+	border-bottom: 2px solid #2E0854;;
+}
+
+.mutationSumRow.mutationTotalRow{
+	border-top: 0;
+}
+
+
+
 
 .heirloomMod{
 	cursor: pointer;
@@ -1959,12 +2486,14 @@ background: linear-gradient(135deg,  #000000 0%, #400000 50%, #100000 100%);
 	background-color: #111;
 	border: 0.3vw solid #555;
 	margin-bottom: 1vw;
+	overflow-y: auto;
+	max-height: 20vw;
 }
 
 .selectedHeirloomItem{
-	font-size: 2vw;
+	font-size: 1.85vw;
 	border: 0.3vw solid #555;
-	padding: 0.5vw;
+	padding: 0.4vw;
 	padding-left: 2vw;
 	text-align: left;
 	background-color: #111111;
@@ -2053,6 +2582,7 @@ background: linear-gradient(135deg,  #000000 0%, #400000 50%, #100000 100%);
 	border-style: solid;
 	border-width: 0.1vw;
 	border-left-width: 1vw;
+	cursor: default;
 }
 
 .achievementTitle{
@@ -2079,6 +2609,14 @@ background: linear-gradient(135deg,  #000000 0%, #400000 50%, #100000 100%);
 
 .tripleTall{
 	line-height: 6.4vw;
+}
+
+.quadTall{
+	line-height: 9.2vw;
+}
+
+.quinTall{
+	line-height: 11.4vw;
 }
 
 #achievementPopup{
@@ -2185,8 +2723,8 @@ background: linear-gradient(135deg,  #000000 0%, #400000 50%, #100000 100%);
 	display: inline-block;
 	background-color: grey;
 	border: 1px solid black;
-	line-height: 1.1em;
-	font-size: 1.1em;
+	line-height: 0.9em;
+	font-size: 0.9em;
 	color: black;
 	padding-top: 0.1em;
 }
@@ -2195,9 +2733,13 @@ background: linear-gradient(135deg,  #000000 0%, #400000 50%, #100000 100%);
 	font-size: 1.3vw;
 }
 
-#achievementMainClose{
+#achievementMainClose, #achievementClose2{
 	color: #6f1f1f;
 	cursor: pointer;
+}
+
+#achievementClose2{
+	font-size: 2.5vw;
 }
 
 #achievementHeader{
@@ -2211,7 +2753,6 @@ background: linear-gradient(135deg,  #000000 0%, #400000 50%, #100000 100%);
 
 .achievementPopupIcon{
 	font-size: 3.8em;
-	color: #151535;
 }
 
 #achievementPopupDescription, #achievementHoverDescription{
@@ -2229,7 +2770,7 @@ background: linear-gradient(135deg,  #000000 0%, #400000 50%, #100000 100%);
 
 #achievementPopupTitle, #achievementHoverTitle{
 	font-weight: bold;
-	color: #318696;
+	display: inline-block;
 }
 
 .achievementBtns{
@@ -2251,7 +2792,121 @@ background: linear-gradient(135deg,  #000000 0%, #400000 50%, #100000 100%);
 	margin-right: 0.1vw;
 }
 
+#achievementHover .row .col-xs-8 {
+	text-align: center;
+}
 
+
+
+.achieveTier1 {
+	color: #155515;
+	border-color: #155515;
+}
+
+.achieveTier2 {
+	color: #151565;
+	border-color: #151565;
+}
+
+.achieveTier3 {
+	color: #551555;
+	border-color: #551555;
+}
+
+.achieveTier4 {
+	color: #954515;
+	border-color: #954515;
+}
+
+.achieveTier5 {
+	color: #651515;
+	border-color: #651515;
+}
+
+.achieveTier6 {
+	color: #951545;
+	border-color: #951545;
+}
+
+.achieveTier7 {
+	color: #35a5a5;
+	border-color: #35a5a5;
+}
+
+.achieveTier8 {
+	color: #d58565;
+	border-color: #d58565;
+}
+
+.achieveTier9 {
+	border-image: linear-gradient(to top, #2286ad 0%,#000000 30%,#661310 50%,#000000 80%,#2286ad 100%);
+	border-image-slice: 3;
+}
+
+.achievementPopupIcon.achieveTier9, #achievementHoverTitle.achieveTier9, #achievementPopupTitle.achieveTier9 {
+	background-image: radial-gradient(ellipse at center, #2286ad 0%,#000000 30%,#661310 50%,#000000 80%,#2286ad 100%);
+	color: black;
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	border-radius: 25px;
+}
+
+.achieveTier10 {
+	border-image: linear-gradient(to top, #bd6543 0%,#661310 30%,#a18900 50%,#661310 80%,#bd6543 100%);
+	border-image-slice: 3;
+}
+
+.achievementPopupIcon.achieveTier10, #achievementHoverTitle.achieveTier10, #achievementPopupTitle.achieveTier10 {
+	background-image: radial-gradient(ellipse at center, #bd6543 0%,#661310 30%,#665700 50%,#661310 80%,#bd6543 100%);
+	color: black;
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	border-radius: 25px;
+}
+
+.achieveTier10 {
+	border-image: linear-gradient(to top, #bd6543 0%,#661310 30%,#a18900 50%,#661310 80%,#bd6543 100%);
+	border-image-slice: 3;
+}
+
+.achievementPopupIcon.achieveTier10, #achievementHoverTitle.achieveTier10, #achievementPopupTitle.achieveTier10 {
+	background-image: radial-gradient(ellipse at center, #bd6543 0%,#661310 30%,#665700 50%,#661310 80%,#bd6543 100%);
+	color: black;
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	border-radius: 25px;
+}
+
+.achieveTier11 {
+	border-image: linear-gradient(to top, #551555 0%,#35a5a5 30%,#1900ff 50%,#35a5a5 80%,#551555 100%);
+	border-image-slice: 3;
+}
+
+.achievementPopupIcon.achieveTier11, #achievementHoverTitle.achieveTier11, #achievementPopupTitle.achieveTier11 {
+	background-image: radial-gradient(ellipse at center, #551555 0%,#1b5353 30%,#1900ff 50%,#1b5353 80%,#551555 100%);
+	color: black;
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	border-radius: 25px;
+}
+
+.achieveTier12 {
+	border-image: linear-gradient(to top, #620f0f 0%,#d58565 30%,#951545 50%,#d58565 80%,#620f0f 100%);
+	border-image-slice: 3;
+}
+
+.achievementPopupIcon.achieveTier12, #achievementHoverTitle.achieveTier12, #achievementPopupTitle.achieveTier12 {
+	background-image: radial-gradient(ellipse at center, #620f0f 0%,#d58565 30%,#951545 50%,#d58565 80%,#620f0f 100%);
+	color: black;
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	border-radius: 25px;
+}
 
 #statsTitle{
 	font-size: 3vw;
@@ -2284,6 +2939,8 @@ background: linear-gradient(135deg,  #000000 0%, #400000 50%, #100000 100%);
 
 #portalUpgradesHere{
 	display: inline-block;
+	max-height: calc(100vh - 21.3vw);
+	overflow-y: auto;
 }
 
 #portalTitle{
@@ -2295,12 +2952,12 @@ background: linear-gradient(135deg,  #000000 0%, #400000 50%, #100000 100%);
 
 #portalHelium{
 	font-size: 2vw;
+	line-height: 2.8vw;
 }
-#portalTotalHelium{
+
+#portalTotalPortals, #portalTotalSpent, #portalTotalHelium{
 	font-size: 1.3vw;
-}
-#portalTotalPortals{
-	font-size: 1.3vw;
+	line-height: 1.7vw;
 }
 
 .inPortalBtn{
@@ -2310,10 +2967,6 @@ background: linear-gradient(135deg,  #000000 0%, #400000 50%, #100000 100%);
 .inPortalBtnSm{
 	font-size: 1.3vw !important;
 	margin-bottom: .5vw;
-}
-
-#biomeAdvMapsSelect{
-	color: black;
 }
 
 .NoticesMessage {
@@ -2377,38 +3030,117 @@ background: linear-gradient(135deg,  #000000 0%, #400000 50%, #100000 100%);
 	padding: 0px 0.2vw;
 }
 
-/* MUTATIONS HERE */
+/* VISUAL MUTATIONS HERE */
 
-.badNameMutation.Corruption{
-	background-color: #2f006d;
+.battleCell.TrimpmasSnow, .badNameMutation.TrimpmasSnow{
+    color: #0082bc;
+    background: linear-gradient(45deg, rgba(255,255,255,0.8), rgba(189,255,255,0.8));
+}
+
+.battleCell.CorruptSnow, .badNameMutation.CorruptSnow, #mapGrid ul li.voidCell.cellColorNotBeaten.CorruptSnow{
+    color: #6082bc;
+    background: linear-gradient(45deg, rgba(255,255,255,0.8), rgba(221,175,255,0.8));
+}
+
+.battleCell.HotSnow, .badNameMutation.HotSnow{
+    color: #b0828c;
+    background: linear-gradient(45deg, rgba(255,255,255,0.8), rgba(253,175,175,0.8));
+}
+
+.battleCell.HealthySnow, .badNameMutation.HealthySnow{
+    color: #313D36;
+    background: linear-gradient(45deg, rgba(255,255,255,0.8), rgba(214, 214, 175, 0.8));
+}
+
+.liquid ul li.TrimpmasSnow{
+	color: black;
+	background: yellow;
+}
+
+.liquid ul li.battleCell.cellColorCurrent.Corruption {
+    background-color: #2E0854 !important;
+}
+
+.liquid ul li.battleCell.cellColorCurrent.Living {
+    background: black !important;
+}
+
+.battleCell.Pumpkimp, .badge.Pumpkimp{
+	background-color: #d96c00;
+	color: black;
+}
+
+.battleCell.PumpkimpBordered {
+    box-shadow: inset 0px 0px 5px #d96c00;
+}
+
+.battleCell.Pumpkimp.Corruption{
+	background-color: #672938;
+	color: white; 
+}
+
+.battleCell.Pumpkimp.Magma{
+	background-color: #A62400;
 	color: white;
 }
 
-.battleCell.Corruption, .badge.Corruption{
-	background-color: #2E0854;
-	color: #DDDDFF;
-}
-
-.battleCell.Magma, .badge.Magma, .badNameMutation.Magma, .message.Magma {
-	background-color: #8c0000;
-	color: #FFDDDD;
-}
-
-.battleCell.Pumpkimp, .badge.Pumpkimp, .badNameMutation.Pumpkimp{
-	background-color: #d96c00;
+.battleCell.Pumpkimp.Healthy{
+	background-color: #8B4C0B;
 	color: white;
 }
 
 .badNameMutation.Pumpkimp{
-	background-color: #a65300;	
+	background-color: #d96c00;
+	color: black;	
+}
+
+.pumpkimpRow{
+	background-color: #d96c00 !important;
+	color: black;	
+}
+
+.cellColorNotBeaten.battleCell.mapPumpkimp{
+	background-color: #d96c00;
+	color: black;
 }
 
 #row9 .battleCell.Pumpkimp{
 	background-color: #006600;
 }
 
-.battleCell.mapPumpkimp{
-	background-color: #a65300;	
+#row9 .battleCell.PumpkimpBordered {
+    box-shadow: inset 0px 0px 5px #006600;
+}
+
+/* MUTATIONS HERE */
+
+.battleCell.cellColorNotBeaten.Living, .battleCell.cellColorBeaten.Living, .badge.Living, .badNameMutation.Living{
+	background: black !important;
+	color: white !important;
+}
+
+.badNameMutation.Healthy, .badge.Healthy, .battleCell.Healthy, .message.Healthy{
+	background: initial;
+	background-color: #3D2C15;
+	color: white;
+}
+
+.badNameMutation.Corruption{
+	background: initial;
+	background-color: #2f006d;
+	color: white;
+}
+
+.battleCell.Corruption, .badge.Corruption{
+	background: initial;
+	background-color: #2E0854;
+	color: #DDDDFF;
+}
+
+.battleCell.Magma, .badge.Magma, .badNameMutation.Magma, .message.Magma {
+	background: initial;
+	background-color: #8c0000;
+	color: #FFDDDD;
 }
 
 .easterEgg0{
@@ -2435,13 +3167,177 @@ background: linear-gradient(135deg,  #000000 0%, #400000 50%, #100000 100%);
 	color: white;
 }
 
-#turkimpBuff{
+.fluffyRowComplete{
+	font-weight: bold;
+	background: rgba(0, 0, 0, 0.25)
+}
+
+.fluffyEvolveText{
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	background-color: #740774;
+	color: white;
+	font-size: 1.1em;
+	font-weight: bold;
+}
+
+.fluffFormDaily{
+	color: #9a7300;
+	font-weight: bold;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.fluffFormZone{
+	color: #040675;
+	font-weight: bold;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.fluffFormCurious{
+	color: #69043F;
+	font-weight: bold;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.fluffFormCunning{
+	color: #37770d;
+	font-weight: bold;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.fluffFormSpecial{
+	color: rgb(245, 8, 245);
+	font-weight: bold;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.fluffFormStaff{
+	color: #0e5a07;
+	text-shadow: 
+	1px 1px 2px rgba(15, 158, 74, 0.2), 
+	0 0 25px rgba(43, 64, 185, 0.2), 
+	0 0 5px rgba(33, 114, 51, 0.2);
+	font-weight: bold;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.fluffFormClassy{
+	color: #085B70;
+	font-weight: bold;
+	text-decoration: underline;
+	cursor: pointer;	
+}
+
+.fluffFormFlufffocus{
+	color: rgb(221, 18, 18);
+	font-weight: bold;
+	text-decoration: underline;
+	cursor: pointer;		
+}
+
+.fluffFormKnowledge{
+	color: #2b115b;
+	font-weight: bold;
+	text-decoration: underline;
+	cursor: pointer;	
+}
+
+.fluffFormIce{
+	color: #3232c8;
+	font-weight: bold;
+	text-decoration: underline;
+	cursor: pointer;	
+}
+
+#fluffyExpBreakdown{
+	min-height: calc(1.5em + 1vw);
+	padding: 0.5vw 1.5vw;
+}
+
+#fluffyExpBreakdown:not(:empty){
+	font-style: italic;
+	background-color: #474747;
+	color: #dadada;
+}
+
+.fluffyThird{
+	width: 33%;
+	display: inline-block;
+	text-align: center;
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+#fluffyLevelBreakdownContainer{
+	max-height: 50vh;
+	overflow-y: auto;
+	width: 100%;
+	font-size: 1vw;
+}
+
+#fluffyTooltipTopContainer{
+	font-size: 1vw;
+}
+
+#fluffyLevelBreakdown{
+	border: 1px solid black;
+	font-size: 0.8em;
+	width: 100%;
+}
+
+#fluffyLevelBreakdown tbody tr td:first-child{
+	width: 8%;
+	text-align: center;
+}
+
+#fluffyLevelBreakdown tbody tr td:nth-child(2){
+	padding: 0.5em;
+}
+
+#fluffyLevelBreakdown tbody tr td{
+	border: 1px solid black;
+}
+
+#turkimpBuff, #fluffyBox{
 	width: 100%;
 	text-align: center;
 	background: rgba(102, 51, 0, 0.7);
 	color: #CC6600;
 	font-size: .8em;
 	padding-top: .2vw;
+	height: 3em;
+}
+
+#fluffyBox{
+	font-size: .7em;
+	height: 3.44em;
+	font-weight: bold;
+	cursor: pointer;
+    color: #b72cb7;
+    background-color: #2b112b;
+}
+
+.fluffyIcon{
+	color: black;
+	text-shadow: -1px -1px 0 #b72cb7, 1px -1px 0 #b72cb7, -1px 1px 0 #b72cb7, 1px 1px 0 #b72cb7;
+}
+
+#fluffyExpContainer{
+	height: 0.8em;
+	float: bottom;
+	margin-top: 0.3em;
+}
+
+#fluffyExp{
+	width: 50%;
+	background-color: green;
 }
 
 .turkimp{
@@ -2455,6 +3351,11 @@ background: linear-gradient(135deg,  #000000 0%, #400000 50%, #100000 100%);
 
 .noRecycleDone{
 	background-color: red;
+}
+
+.stackedVoids{
+	font-weight: bold;
+	color: #15FF00;
 }
 
 .voidMap{
@@ -2472,6 +3373,16 @@ color: #DDDDFF !important;
 
 .sizeSecReduced{
 	font-size: 1.1em !important;
+	margin-top: 0.2em;
+}
+
+#resourceColumn .sizeSecReduced{
+	letter-spacing: -0.04em;
+	margin-left: -3%;
+}
+
+#miscColumn .sizeSecReduced{
+	letter-spacing: -0.05em;
 }
 
 .seventhColumn{
@@ -2503,6 +3414,41 @@ color: #DDDDFF !important;
 	color: #FFF;
 }
 
+
+#mapsBtn{
+	overflow: hidden;
+	padding: 0;
+	height: 1.9em;
+}
+
+#mapsBtn div{
+	display: inline-block;
+	text-align: center; 
+}
+
+#mapsBtn div:first-child{
+	width: 80%;
+	padding: 0.15vw 0.3vw;
+	float: left;
+}
+
+#mapsBtn div:nth-child(2){
+	width: 20%; 
+	background-color: grey;
+	float: right;
+	padding-top: 0.2em;
+	height: 1.9em;
+}
+
+#mapsBtn div:nth-child(2):hover{
+	background-color: #666666;
+}
+
+#mapsBtn div:nth-child(2) span{
+	line-height: 1.2em;
+	font-size: 1.1em;
+}
+
 .voidBadge{
 	font-size: 0.9em;
 }
@@ -2513,6 +3459,11 @@ color: #DDDDFF !important;
 }
 .dangerColor, .colorDanger, .stateDanger{
 	background-color: #d9534f;
+	color: white;
+}
+
+.stateDanger.thingColorCtrl{
+	background: radial-gradient(black 45%, #d9534f 60%);
 }
 
 .autoUpgradeBtn.colorSuccess:hover, .dailyTop.colorSuccess:hover, .colorSuccess.hoverColor:hover {
@@ -2587,6 +3538,24 @@ background-color: rgba(255,255,255,0.25);
 	padding: .5vw 2vw;
 }
 
+#singleRunBonuses{
+	margin-top: -2.5%;
+	border: 2px solid #636262;
+	margin-bottom: 1%;
+
+}
+
+#singleRunBonuses div .boneBtn{
+	font-size: 0.95em;
+}
+
+.singleBonusBox{
+	width: 50%;
+	display: inline-block;
+	padding: 2%;
+	border: 1px solid #636262;
+}
+
 #minusRes{
 	color: red;
 	border: 1px solid red;
@@ -2649,7 +3618,6 @@ background-color: rgba(255,255,255,0.25);
 .importLocation{
 	text-align: center;
 	text-decoration: underline;
-	text-color: grey;
 	font-size: .8em;
 	font-weight: bold;
 }
@@ -2742,6 +3710,10 @@ background-color: rgba(255,255,255,0.25);
 	font-size: 1.2vw;
 }
 
+.messageConfigCheckbox{
+	font-size: 1.1vw;
+}
+
 .thingSmall{
 	display: inline-block;
 	font-size: 1.3em;
@@ -2750,6 +3722,14 @@ background-color: rgba(255,255,255,0.25);
 	color: white;
 	margin-top: .5vw;
 	margin-bottom: .5vw;
+}
+
+.thing5{
+	width: 19.5%;
+}
+
+.permGenUpgrade{
+	width: 32.5%;
 }
 
 .importPreviewName{
@@ -2859,6 +3839,16 @@ background-color: rgba(255,255,255,0.25);
 	font-size: .9em;
 }
 
+.critTier4{
+	color: #9e18f8;
+}
+
+#critSpan .critTier4 .icomoon{
+	position: absolute;
+    top: 12%;
+    font-size: 1.1vw;
+}
+
 #tab5{
 	width: 2.2%;
 }
@@ -2911,10 +3901,18 @@ background-color: rgba(255,255,255,0.25);
 	min-height: 10vw;
 	overflow-y: auto;
 	overflow-x: hidden;
-	max-height: 14.3vw;
 	margin: 0.5vw;
 	color: #318696;
 	background-color: #d0d0d0;
+}
+
+#specificChallengeDescription.challengeDescriptionLg{
+	max-height: 14.3vw;	
+}
+
+#specificChallengeDescription.challengeDescriptionSm{
+	max-height: 14.05vw;
+	margin-top: -0.1vw;
 }
 
 #challenges{
@@ -2954,6 +3952,7 @@ background-color: rgba(255,255,255,0.25);
 	color: white;
 	font-size: 1.1vw;
 	width: 19.4%;
+	height: 1.8vw;
 }
 
 .challengeThing:hover{
@@ -3025,6 +4024,32 @@ background-color: rgba(255,255,255,0.25);
 	font-size: 1.1vw;
 }
 
+.pauseMsg{
+	background-color: black;
+	font-size: 1.5vw;
+	padding: 0.6vw;
+	border: 0.2vw solid white;
+}
+
+#lootBdBtn{
+	color: #337ab7;
+	text-shadow:
+	-1px -1px 0 white,  
+		1px -1px 0 white,
+	-1px 1px 0 white,
+		1px 1px 0 white;
+	font-size: 1.6vw;
+}
+
+#lootBdBtn:hover{
+	color: #286090;
+	text-shadow:
+	-1px -1px 0 white,  
+		1px -1px 0 white,
+	-1px 1px 0 white,
+		1px 1px 0 white;
+}
+
 #lootBdContainer{
 	margin-top: 5%;
 	margin-right: 12.5%;
@@ -3060,10 +4085,13 @@ background-color: rgba(255,255,255,0.25);
   color: #000;
 }
 
-.btn-new {
-	color: #0086b3;
+.btn-new{
+	animation: timewarp 240s infinite linear;
+	color: white;
 	font-weight: bold;
-	background-color: #000;
+	background: linear-gradient(270deg, #000, #361212, #000, #042904, #000, #0f054d, #000);
+	background-size: 400% 400%;
+	width: 100%;
 }
 
 .btn-new:hover,
@@ -3072,14 +4100,17 @@ background-color: rgba(255,255,255,0.25);
 .btn-new:active,
 .btn-new.active,
 .open > .dropdown-toggle.btn-new {
-	color: #000;
-	background-color: #0086b3;
+	font-weight: bold;
+	color: white;
+	animation: timewarp 10s infinite linear;
 }
+
 .btn-new:active,
 .btn-new.active,
 .open > .dropdown-toggle.btn-new {
   background-image: none;
 }
+
 
 #flagMustRestart{
 	color: maroon;
@@ -3146,7 +4177,17 @@ input::-webkit-inner-spin-button {
 	color: white !important;
 }
 
-.thingColorSquared.cBorderOn{
+.thingColorInfinite {
+	background-color: #003b99 !important;
+	color: white !important;
+}
+
+.thingColorInfinite:hover {
+	background-color: #012052 !important;
+	color: white !important;
+}
+
+.thingColorSquared.cBorderOn, .thingColorInfinite.cBorderOn{
 	-webkit-box-shadow:inset 0px 0px 0px 0.2vw #bfdfff;
     -moz-box-shadow:inset 0px 0px 0px 0.2vw #bfdfff;
     box-shadow:inset 0px 0px 0px 0.2vw #bfdfff;
@@ -3210,6 +4251,234 @@ input::-webkit-inner-spin-button {
 	border-bottom: 0;
 }
 
+#buyTabs .tabSelected a {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.tabSelected.buyTab {
+    background: rgba(255,255,255,0.25);
+}
+
+.natureUpgradeLevel{
+	position: absolute;
+	font-size: 1vw;
+	top: 2%;
+	left: 2%;
+}
+
+.natureUpgradeCost{
+	position: absolute;
+	font-size: 1vw;
+	top: 50%;
+	left: 2%;
+}
+
+.natureBuyIconMini .natureUpgradeCost{
+	top: 2%;
+	left: 0%;
+	font-size: 0.9vw;
+	width: 100%;
+	text-align: center;
+}
+
+.empowerTabPoison a, .empoweredCellPoison, .tabColPoison, .badNamePoison, #poisonEmpowermentIcon{
+	background: rgba(50, 150, 50, 0.75) !important;
+}
+
+.tabColPoison{
+    box-shadow:inset 0px 0px 0px 0.2vw #1e571e;
+}
+
+.empowerTabWind a, .empoweredCellWind, .tabColWind, .badNameWind, #windEmpowermentIcon{
+	background: rgba(60, 75, 130, 0.75) !important;
+}
+
+.tabColWind{
+    box-shadow:inset 0px 0px 0px 0.2vw #283257;
+}
+
+.empowerTabIce a, .empoweredCellIce, .tabColIce, .badNameIce, #iceEmpowermentIcon{
+	background: rgba(50, 50, 200, 0.75) !important;
+}
+
+.tabColIce{
+    box-shadow:inset 0px 0px 0px 0.2vw #1f1f79;
+}
+
+.empowerTabIce.tabSelected a, .empowerTabIce a:hover {
+    background: rgba(30, 30, 120, 0.75) !important;
+}
+
+.empowerTabWind.tabSelected a, .empowerTabWind a:hover {
+    background: rgba(36, 45, 78, 0.75) !important;
+}
+
+.empowerTabPoison.tabSelected a, .empowerTabPoison a:hover {
+    background: rgba(30, 90, 30, 0.75) !important;
+}
+
+.empowerCellIce, .empowerCellPoison, .empowerCellWind{
+	color: black !important;
+}
+
+.badNamePoison, .badNameWind, .badNameIce{
+	font-weight: bold;
+	color: white;
+}
+
+.natureTop{
+	background-color: rgba(0, 0, 0, 0.4);
+	margin: 0.19vw;
+	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+	z-index: 4;
+	margin-bottom: 0.78vw;
+}
+
+#infoSpanPoison{
+	background: rgb(20, 80, 20);
+}
+
+#infoSpanWind{
+	background: rgb(30, 35, 65);
+}
+
+#infoSpanIce{
+	background: rgb(25, 25, 125);
+}
+
+.infoSpanNature{
+	display: inline-block;
+	font-size: 0.7vw;
+	border-radius: 50px;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	width: 4vw;
+	padding: 0.1vw;
+	padding-top: 0.2vw;
+	position: absolute;
+	top: 0.4vw;
+	left: 0.25vw;
+}
+
+.infoSpanNature span{
+	font-size: 0.6vw;
+	color: yellow;
+}
+
+.natureColDescription{
+	font-size: 0.8vw;
+	line-height: 0.8vw;
+	display: block;
+	margin-bottom: 2vw;
+	display: none;
+}
+
+.tabColNature{
+	text-align: center;
+	font-size: 1.5vw;
+	padding-bottom: 0.78vw;
+	height: 100%;
+}
+
+.natureBuyIcon{
+	font-size: 2vw;
+	display: block;
+	width: 88%;
+	margin-left: 6%;
+	border: 5px solid rgba(0, 0, 0, 0.7);
+	padding-top: 7.5%;
+	margin-bottom: 2%;
+	cursor: pointer;
+	position: relative;
+	height: 3.1vw;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index:3;
+}
+
+.natureBuyIcon:hover{
+	background-color: rgba(0, 0, 0, 0.2);
+	border-color: rgba(0, 0, 0, 0.8);
+}
+
+.natureBigIcon{
+	position: absolute;
+	left: 75%;
+	top: 0.35vw;
+}
+
+.natureBuyIconMini{
+	font-size: 1.5vw;
+	float: left;
+	width: 43%;
+	margin-left: 2%;
+	padding-top: 7%;
+	padding-bottom: 5%;
+	height: 4vw;
+}
+
+.natureBuyIconMini:first-child{
+	margin-left: 6%;
+}
+
+.natureSmallIcon{
+	position: absolute;
+	top: 1.6vw;
+	left: 60%;
+}
+
+.natureSmallIcon.icon-shuffle3{
+	left: 15%;
+}
+
+.natureBackgroundIcon{
+	position: absolute;
+	font-size: 13vw;
+	top: 27%;
+	left: 5%;
+	z-index: 2;
+	color: rgba(255, 255, 255, 0.08);
+}
+
+.natureBackgroundIcon.icon-air{
+	left: 6%;
+	font-size: 12vw;
+	top: 30%;
+}
+
+.natureBackgroundIcon.icon-certificate{
+	left: 8%;
+}
+
+#natureA span{
+	font-size: 0.8vw;
+}
+
+#natureContainer .row{
+	overflow: hidden;
+}
+
+.natureUberName{
+	font-size: 0.9vw;
+}
+
+.natureMessage{
+	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+	padding: 1%;
+	color: white;
+}
+
+.natureMessage.poison{
+	background-color: #164116;
+}
+
+.natureMessage.wind{
+	background-color: #283257;
+}
+
+.natureMessage.ice{
+    background-color: #141452;
+}
+
+
 .cellColorBeaten{
 	background: green !important;
 	color: black !important;
@@ -3245,13 +4514,16 @@ input::-webkit-inner-spin-button {
 	color: white;
 }
 
-.psColorOrange {
+.psColorOrange, .attackColorOrange, .hePhColorOrange {
 	color: orange;
 }
 
 sup{
+	/*nm, u?*/
 	top: -0.3em;
 }
+
+
 
 .autoUpgradeBtn{
 	border: 1px solid white;
@@ -3307,16 +4579,21 @@ sup{
 	display: inline-block;
 }
 
-#toggleusePlayFab.settingBtn0{
-	background-color: #00008c;
+#toggleusePlayFab.settingBtn0, .pFabEnable{
+	background-color: #00008c !important;
 }
 
-#toggleusePlayFab.settingBtn0:hover{
-	background-color: #00005a;
+#toggleusePlayFab.settingBtn0:hover, .pFabEnable:hover{
+	background-color: #00005a !important;
+	color: white !important;
 }
 
 #tooltipDiv.tooltipExtraLg{
 	width: 50%;
+}
+
+#tooltipDiv.tooltipExtraSuperLg{
+	width: 65%;
 }
 
 #playFabLoginInfo{
@@ -3339,6 +4616,12 @@ sup{
 	margin-bottom: 1vh;
 }
 
+#statsRow{
+	max-height: calc(100vh - 18vw);
+	margin-bottom: 1vw;
+	overflow-y: auto;
+}
+
 .spirePoem {
 	font-style: italic;
 	font-weight: bold;
@@ -3346,8 +4629,65 @@ sup{
 	text-align: center;
 }
 
-.col-xs-3.fifth{
-	width: 20% !important;
+.formFifth{
+	width: 20%;
+	float: left;
+	padding: 0;
+	margin: 0;
+}
+
+.formSixth{
+	width: 16.66666667%;
+	float: left;
+	padding: 0;
+	margin: 0;
+}
+
+#dgChangeBtnContainer{
+	height: 1.6vw;
+}
+
+.dgChangeBtn{
+	border: 1px solid white;
+    font-size: 1.12em;
+    text-align: center;
+	padding: 0.09vw 0.2vw 0 0.2vw;
+	height: 100%;
+	display: inline-block;
+}
+
+.eradicatedBtns #generatorPassiveBtn, .eradicatedBtns #generatorHybridBtn{
+	background-color: grey !important;
+}
+
+#generatorStateConfigBtn{
+	background-color: grey;
+	padding-left: 0.4vw;
+	padding-right: 0.4vw;
+}
+
+#genStateConfigTop .optionContainer{
+	width: 50%;
+	display: inline-block;
+	margin: 0;
+}
+
+#generatorStateConfigBtn .glyphicon::before{
+	font-size: 0.8vw;
+}
+
+#generatorStateConfigBtn:hover{
+	background-color: #6b6b6b;
+}
+
+#generatorPauseBtn{
+	font-size: 0.8em;
+	display: inline-block;
+	padding: 0 5%;
+}
+
+#generatorSlider{
+	cursor: pointer;
 }
 
 #magmiteOwned, #generatorUpgradeTitle{
@@ -3417,7 +4757,11 @@ sup{
 
 #generatorProducingContainer{
 	font-size: 1.1em;
-	padding-top: 10%;
+	padding-top: 10%;	
+}
+
+#generatorProducingColumn.hasPause #generatorProducingContainer{
+	padding-top: 5%;
 }
 
 #generatorTickContainer{
@@ -3555,4 +4899,757 @@ sup{
 	height: 10%;
 	border-radius: 50%;
 	border: 1px solid black;
+}
+
+#donateForm input[type="image"]{
+	background-color: initial !important;
+}
+
+.icon-controller-play{
+	font-size: 1.4em;
+}
+
+.patchNotice{
+	font-size: 1.1vw;
+	border: 0.2vw solid white;
+}
+
+.niceCheckbox{
+	cursor: pointer;
+}
+
+.mapExtraAfford1{
+	background-color: #09470b;
+	color: #c8c8c8;
+}
+
+.mapExtraAfford2{
+	background-color: #805300;
+	color: #c8c8c8;
+}
+
+#playerSpirePopout{
+	position: absolute;
+	top: 5vh;
+	left: 5vw;
+	width: 90vw;
+	height: 90vh;
+	pointer-events: none;
+	z-index: 3 !important;
+}
+
+#playerSpireSpirePanel{
+	width: calc(30vw - 4px);
+	border: 2px solid #dadada;
+	height: 100%;
+	display: inline-block;
+	background-color: black;
+	pointer-events: auto;
+	padding: 0.5vw;
+}
+
+#playerSpireSpireSpirePanel{
+	width: 100%;
+	height: 100%;
+
+}
+
+#floatingCombatText{
+	position: absolute;
+	top: 0;
+	left: 0.5vw;
+	border: 1px solid black;
+	height: 90vh;
+	width: calc(25vw - 4px);
+	pointer-events: none;
+}
+
+#playerSpireInfoPanel{
+	width: 60vw;
+	height: 100%;
+	display: inline-block;
+	color: #dadada;
+	font-size: 1vw;
+	vertical-align: top;
+	background-color: black;
+	pointer-events: auto;
+	padding: 1% 2.5%;
+	overflow-y: auto;
+	border: 2px solid #dadada;
+	border-left: 0;
+}
+
+#playerSpireSmallPanel{
+	width: 9vw;
+	height: 100%;
+	display: none;
+	color: #dadada;
+	background-color: black;
+	vertical-align: top;
+	font-size: 1vw;
+	pointer-events: auto;
+	position: relative;
+	border: 2px solid #dadada;
+	border-left: 0;
+	overflow-y: auto;
+}
+
+.playerSpireCell{
+    width: calc(20%);
+    height: calc(5% + 1px);
+    margin-left: -1px;
+    margin-top: -1px;
+	border: 1px solid #dadada;
+	display: block;
+	text-align: center;
+	cursor: pointer;
+	float: left;
+	position: relative;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.playerSpireEnemy{
+	text-align: center;
+	width: 60%;
+	height: 60%;
+	display: inline-block;
+	margin-top: 1vh;
+	border: 0.1vw solid #5a5a5a;
+	font-weight: bold;
+	color: white;
+	font-size: 0.8vw;
+	background-clip: padding-box;
+	cursor: pointer;
+	position: relative;
+}
+
+.playerSpireEnemyText{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	z-index: 10;
+}
+
+.spireUniqueIcon{
+	position: absolute;
+	top: 10%;
+	left: 82%;
+	font-size: 0.45vw;
+	color: #5c5c5c;
+	z-index: 0;
+}
+
+.spireTrapBox, .spireControlBox{
+	cursor: pointer;
+	border: 2px solid #dadada;
+	padding: 0.5vw;
+	display: inline-block;
+	margin: 0.5%;
+	text-align: center;
+	width: 24%;
+}
+
+.spireControlBox{
+	width: 19%;
+}
+
+.spireTrapBox{
+	height: 4.2vw;
+	vertical-align: top;
+	position: relative;
+}
+
+.spireTrapBoxSmall{
+	position: relative;
+}
+
+.spireTrapBox.playerSpireUpgrade{
+	height: initial;
+}
+
+.spireControlBoxDbl{
+	width: 19%;
+	margin: 0.5%;
+	display: inline-block;
+	text-align: center;
+}
+
+.spireControlBoxDbl div{
+	display: inline-block;
+	width: 45%;
+	margin: 2.5%;
+	padding: 0.25vw;
+	cursor: pointer;
+	border: 1px solid #dadada;
+}
+
+.spireTrapBoxSmall, .spireControlBoxSmall{
+	cursor: pointer;
+	border: 2px solid #dadada;
+	padding: 0.5vw;
+	display: inline-block;
+	margin: 0.25vw;
+	text-align: center;
+	width: calc(100% - 0.5vw);
+}
+
+.spireTrapBox.selected, .spireTrapBoxSmall.selected, .spireControlBox.selected{
+	border: 2px solid yellow !important;
+}
+
+#playerSpireTitle{
+	padding: 1vw;
+	font-weight: bold;
+	font-size: 1.5vw;
+}
+
+#playerSpireHelp{
+	border: 2px solid blue;
+	font-size: 0.8vw;
+	padding: 0.5vw;
+	display: block;
+}
+
+#playerSpireInfoTop{
+	text-align: center;
+	margin-top: 1vw;
+}
+
+.floatingCombatText{
+	text-shadow:
+	-1px -1px 0 white,  
+		1px -1px 0 white,
+	-1px 1px 0 white,
+		1px 1px 0 white;
+	font-weight: bold;
+	z-index: 9999999999;
+	font-size: 0.8vw;
+}
+
+#playerSpireCloseBtnSm, #playerSpireCloseBtn{
+	position: absolute;
+	top: 1.5%;
+	left: 97%;
+	color: red;
+	font-size: 1.5vw;
+	cursor: pointer;
+}
+
+#playerSpireHelpBtn{
+	position: absolute;
+	top: 1.5%;
+	left: 95%;
+	color: blue;
+	font-size: 1.5vw;
+	cursor: pointer;
+}
+
+#playerSpireCloseBtnSm{
+	left: 82%;
+	top: 0.5%;
+}
+
+#playerSpireInfoTopSm{
+	padding: 5%;
+}
+
+#playerSpireTab a{
+	background-color: #a27d02;
+}
+
+#playerSpireTab a:hover{
+	background-color: #6d5403;
+}
+
+#playerSpireTab.pausedSpire a{
+	background-color: #ca0505;
+}
+
+#playerSpireTab.pausedSpire a:hover{
+	background-color: #6b0202;
+}
+
+#playerSpireTutorial{
+	color: #dadada;
+	font-weight: bold;
+	margin-top: 5%;
+	display: inline-block;
+	font-size: 0.9vw;
+}
+
+.spireQuest{
+	border: 1px solid blue;
+	padding: 2%;
+	font-size: 1.2vw;
+}
+
+.spirePresetBtns{
+	height: 4vw;
+	margin-top: 1vw;
+}
+
+.spirePresetBtns span{
+	border: 1px solid white;
+	padding: 5%;
+	width: 45%;
+	margin: 1.5%;
+	cursor: pointer;
+	color: white;
+	font-weight: bold;
+	background-color: black;
+}
+
+.spirePresetBtns span:hover{
+	background-color: #383838;
+}
+
+.playerSpireTooltipTrapName{
+	color: white; 
+	padding: 0.4vw; 
+	font-weight: bold;
+	margin-bottom: 0.5vw;
+	border: 1px solid white;
+	display: inline-block;
+}
+
+.spireTrapIcon, .spireTrapBox .icomoon, .spireTrapBoxSmall .icomoon{
+	position: absolute;
+	top: 25%;
+	left: 1%;
+	color: #dadada;
+	font-size: 1vw;
+	text-shadow:
+	-1px -1px 0 black,  
+		1px -1px 0 black,
+	-1px 1px 0 black,
+		1px 1px 0 black;
+}
+
+.spireTrapBox .icomoon{
+	top: 12%;
+	left: 2%;
+}
+
+.spireTrapBoxSmall .icomoon{
+	left: 2%;
+}
+
+.spireTrapBoxSmall .icon-bolt{
+	left: 5%;
+}
+
+.spireTrapIcon .icon-bolt{
+	padding-left: 25%;
+}
+
+#spireSettingsTooltip{
+	padding: 1vw;
+	padding-top: 0.5vw;
+}
+
+#spireSettingsTooltip b{
+	font-size: 1.4vw;
+	display: block;
+	margin-bottom: 0.5vw;
+	margin-top: 0.5vw;
+}
+
+.spireOption{
+	width: 25%;
+	display: inline-block;
+	font-size: 1.1vw;
+}
+
+.spireOption span{
+	font-size: 1.5vw;
+	float: right;
+	margin-right: 1.5vw;
+	margin-bottom: 1vw;
+}
+
+#playerSpireTutorial{
+	overflow-y: auto;
+}
+
+.spirePausedYes{
+	background-color: #ca0505;
+}
+
+.playerSpireEnemy.shocked{
+	color: #e4c305;
+	text-shadow:
+	-1px -1px 0 black,  
+		1px -1px 0 black,
+	-1px 1px 0 black,
+		1px 1px 0 black;
+}
+
+.thing.thingColorCanNotAfford .affordSR{
+	display: none;
+}
+
+.thing.thingColorCanAfford .cantAffordSR{
+	display: none;
+}
+
+.screenReaderAchievements{
+	font-size: 0.8vw;
+}
+
+.screenReaderAchievements tbody tr td{
+	padding: 0.1vw;
+	border: 1px solid white;
+}
+
+.screenReaderPerk{
+	font-size: 0.5em;
+}
+
+#swapPortalUniverseBtn{
+	position: absolute;
+	top: 1vw;
+	left: 1vw;
+	padding: 1vw;
+	text-align: center;
+	background-color: black;
+	color: white;
+	font-weight: bold;
+	font-size: 1vw;
+	border: 1px solid white;
+	cursor: pointer;
+}
+
+#swapPortalUniverseBtn:hover{
+	background-color: rgb(53, 52, 52);
+}
+
+#energyShield{
+	background: linear-gradient(0deg, rgb(33, 0, 124) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 70%, rgb(33, 0, 124) 100%);
+	position: absolute;
+	width: 0%;
+	height: 100%;
+	border-radius: 2%;
+	top: 0;
+	left: 0;
+	pointer-events:none;
+}
+
+.energyShieldIcon{
+	position: absolute;
+	top: 12%;
+	left: -14%;
+}
+
+#upgradesContainer{
+	min-height: calc(4vw + 1vh + 5px);
+}
+
+#gammaSpan .badge{
+	color: #7e65da;
+	background-color: black;
+}
+
+.achieveColorRed{
+	background-color: #b32d00;
+	background: repeating-linear-gradient(
+		45deg,
+		#b32d00,
+		#b32d00 10px,
+		#8f2401 10px,
+		#8f2401 20px
+	);
+}
+
+.achieveColorYellow{
+	background-color: #C5C515;
+	background: repeating-linear-gradient(
+				45deg,
+				#C5C515,
+				#C5C515 10px,
+				#9b9b11 10px,
+				#9b9b11 20px
+	);
+}
+
+.achieveColorGreen{
+	background-color: #159515;
+}
+
+.achieveColorGrey{
+	background-color: grey;
+}
+
+.heirloomSpent{
+	font-size: 0.8em;
+	text-decoration: italic;
+}
+
+#challengeTrappapalooza .thingName{
+	font-size: 0.9vw;
+}
+
+.questMessage{
+	font-size: 1.1vw;
+	padding: 2%;
+	background-color: black;
+}
+
+.questNew{
+	color: #4b39e6;
+}
+
+.questSuccess{
+	color: #0c8d2c;
+}
+
+.questMessage .icomoon{
+	color: yellow;
+}
+
+.questFail .icomoon{
+	color: grey;
+}
+
+.equalityColorOn{
+	background-color: #449d44;
+}
+
+.equalityColorOff{
+	background-color: #d43f3a;
+}
+
+.toggleAllBtn{
+	padding: 2%;
+	font-weight: bold;
+	font-size: 1.2vw;
+}
+
+#autoEquipMiscTable{
+	width: 100%;
+}
+
+#autoEquipMiscTable tbody tr td{
+	width: 18%;
+	text-align: center;
+	padding: 0.5%;
+}
+
+#autoEquipMiscTable tbody tr td:nth-child(3){
+	width: 23%;
+}
+
+#autoEquipMiscTable tbody tr td .toggleAllBtn{
+	font-size: 0.9vw;
+	padding: 0.5vw 0;
+	width: 100%;
+}
+
+.Obsidian.cellColorNotBeaten{
+	background-color: black !important;
+	color: white !important;
+	border-color: #8c0000 !important;
+}
+
+.obsidianMessage{
+	padding: 1vw;
+	font-size: 1.1vw;
+	border: 0.5vw solid #8c0000;
+	background-color: black;
+	color: white;
+}
+
+.fullDarkEssence{
+	display: block;
+	color: #00FFFF;
+	background-color: #000;
+	padding: 2%;
+	font-size: 1.5vw;
+}
+
+#offlineWrapper{
+	animation: timewarp 240s infinite linear;
+	color: white; 
+	width: 100vw; 
+	height: 100vh; 
+	display: none;
+	background: linear-gradient(270deg, #000, #361212, #000, #042904, #000, #0f054d, #000);
+	background-size: 400% 400%;
+}
+
+@keyframes timewarp{
+	0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+#offlineTitle{
+	font-size: 2vw;
+	text-align: center;
+}
+
+#offlineInnerWrapper{
+	width: 50%;
+	margin-left: 25%;
+	font-size: 1.5vw;
+	padding-top: 10%;
+}
+
+#offlineProgressWrapper{
+	width: 100%;
+	height: 3vw;
+}
+
+#offlineExtraInfo{
+	font-size: 1.2vw;
+	text-align: right;
+}
+
+#offlineProgressText{
+	left: 0;
+	padding-top: 0.35vw;
+	width: 100%;
+	position: absolute;
+	font-weight: bold;
+	text-align: center;
+	color: black;
+	font-size: 1.7vw;
+}
+
+.offlineMapBtn{
+	width: 47%;
+	margin: 1%;
+	font-size: 1vw;
+}
+
+#offlineTimeOffline{
+	padding-top: 2vw;
+	text-align: center;
+}
+
+.offlineExtraBtn{
+	width: 45%;
+	margin: 2vw 2%;
+	display: inline-block;
+	font-size: 1.2vw;
+}
+
+#offlineExtraBtnsContainer, #offlineMapBtns, #offlineZoneBtns{
+	height: 20vw;
+	border: 1px solid white;
+	padding-top: 2vw;
+}
+
+#offlineZoneBtns{
+	text-align: center;
+}
+
+#offlineEffective{
+	background-color: black;
+	color: red;
+	font-weight: bold;
+	font-size: 0.9em;
+	text-align: center;
+}
+
+#offlineSettingContainer{
+	text-align: center;
+}
+
+.mazRow div input{
+	width: 100%;
+}
+
+.mazRow div select{
+	width: 100%;
+}
+
+.mazRow{
+	padding: 0 2%;
+	margin: 0 1%;
+	font-weight: bold;
+}
+
+.mazRow.titles div{
+	text-align: center;
+	font-weight: bold;
+}
+
+.mazRow.titles{
+	border: 1px solid black;
+	margin: 0 1%;
+	padding: 0.2% 2%;
+}
+
+#mazAddRowBtn{
+	margin-top: 0.5vw;
+}
+
+.mazDelete, .mazWorld, .mazCheckbox, .mazPreset, .mazRepeat, .mazRepeatUntil, .mazExit, .mazBwWorld{
+	display: inline-block;
+}
+
+.mazDelete .icomoon{
+	position: relative;
+	top: 0.6vw;
+	left: -0.55vw;
+	color: red;
+	font-weight: bold;
+	font-size: 2vw;
+}
+
+.mazDelete{
+	width: 4%;
+	cursor: pointer;
+}
+
+.mazWorld{
+	width: 9%;
+}
+
+.mazCheckbox{
+	width: 4%;
+}
+
+.mazPreset{
+	width: 16%;
+}
+
+.mazRepeat{
+	width: 19%;
+}
+
+.mazRepeatUntil{
+	width: 24%;
+}
+
+.mazExit{
+	width: 24%;
+}
+
+.mazBwZoneOn .mazRepeatUntil, .mazBwZoneOn .mazExit{
+	width: 20%;
+}
+
+.mazBwZoneOn .mazRepeat{
+	width: 17%;
+}
+
+.mazBwZoneOn .mazPreset{
+	width: 13%;
+}
+
+.mazBwZoneOff .mazBwWorld{
+	display: none;
+}
+
+.mazBwZoneOn .mazBwWorld{
+	width: 13%;
+}
+
+.mazBwMainOff .mazRepeatUntil select .mazBwClimbOption{
+	display: none;
 }
